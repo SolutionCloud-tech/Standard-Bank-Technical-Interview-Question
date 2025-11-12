@@ -6,7 +6,7 @@
 
 ---
 
-## ⚙️ Overview
+##  Overview
 
 The application reads configuration from `appsettings.json`, dynamically constructs a greeting message based on the current time, translates it into the configured target language using the **DeepL API**, and displays it to the console.  
 
@@ -20,7 +20,7 @@ This implementation demonstrates:
 
 ---
 
-## 🧩 Core Features
+##  Core Features
 
 ### 1. Configuration via `appsettings.json`
 All greetings and language codes are read dynamically:
@@ -63,7 +63,7 @@ services.AddHttpClient<ITranslationService, DeepLTranslationService>();
 
 ---
 
-## ⚙️ MediatR Integration
+##  MediatR Integration
 
 The project implements **MediatR v13.1**, following modern .NET registration syntax.
 
@@ -91,7 +91,7 @@ await mediator.Send(new GreetUserCommand());
 
 ---
 
-## 🧪 Unit Testing
+##  Unit Testing
 
 ### Framework
 - **xUnit 2.8.0**
@@ -130,7 +130,7 @@ Passed!  - 2 passed, 0 failed, 0 skipped
 
 ---
 
-## 🧱 Project Structure
+##  Project Structure
 
 ```
 InterviewApp/
@@ -161,7 +161,7 @@ InterviewApp/
 
 ---
 
-## 🧾 Assumptions & Notes
+##  Assumptions & Notes
 
 - DeepL free API key is provided via environment variable  
   (`setx DEEPL_API_KEY "your-key-here"`)
@@ -171,7 +171,7 @@ InterviewApp/
 
 ---
 
-## ✅ Status Summary
+##  Status Summary
 
 | Feature | Status |
 |----------|---------|
