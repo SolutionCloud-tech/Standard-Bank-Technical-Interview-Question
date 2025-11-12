@@ -13,7 +13,7 @@ Purpose   : Technical assessment implementation demonstrating
 ============================================================
 
 This solution implements all required interview tasks in a 
-structured .NET 8 Console Application. 
+structured .NET 8 Console Application
 
 It demonstrates configuration-driven design, dependency 
 injection (DI), structured logging, runtime translation using 

@@ -4,6 +4,9 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Configuration;
 using InterviewApp.Services;
 using Microsoft.Extensions.Http;
+using MediatR;
+using System.Reflection;
+using InterviewApp.Requests;
 
 class Program
 {
@@ -19,12 +22,17 @@ class Program
                 services.AddTransient<IGreetingService, GreetingService>();
                 services.AddTransient<ITimeGreetingService, TimeGreetingService>();
                 services.AddHttpClient<ITranslationService, DeepLTranslationService>();
+
+                services.AddMediatR(cfg =>
+                {
+                    cfg.RegisterServicesFromAssembly(Assembly.GetExecutingAssembly());
+                });
             })
             .Build();
 
-        var greetingService = host.Services.GetRequiredService<IGreetingService>();
-        greetingService.Run();
-
+       
+        var mediator = host.Services.GetRequiredService<IMediator>();
+        await mediator.Send(new InterviewApp.Requests.GreetUserCommand());
         await host.RunAsync();
     }
 }
